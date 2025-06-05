@@ -19,10 +19,17 @@ namespace CalculadoraForms
             // Faz a soma
             double resultado = numero1 + numero2;
 
-            lblResultado.Text = "RESULTADO: " + resultado.ToString();
+            lblResultado.Text = $"RESULTADO: {resultado}";
 
             // Adiciona o Histórico da SOMA na operação
             AdicionarHistorico($"{numero1} + {numero2} = {resultado}");
+
+            // Limpa os campos apos o calculo
+            txtnumero1.Text = "";
+            txtnumero2.Text = "";
+
+            // Coloca o cursor no primeiro campo novamente
+            txtnumero1.Focus();
         }
 
         // Botão de Subtrair
@@ -38,8 +45,15 @@ namespace CalculadoraForms
 
             lblResultado.Text = "RESULTADO: " + resultado.ToString();
 
-            //  o Histórico da SUBTRAÇÃO na operação
+            // O Histórico da SUBTRAÇÃO na operação
             AdicionarHistorico($"{numero1} - {numero2} = {resultado}");
+
+            // Limpa os campos apos o calculo
+            txtnumero1.Text = "";
+            txtnumero2.Text = "";
+
+            // Coloca o cursor no primeiro campo novamente
+            txtnumero1.Focus();
         }
 
         // Botão de Multiplicar
@@ -57,6 +71,13 @@ namespace CalculadoraForms
 
             // Adiciona o Histórico da MULTIPLICAÇÃO na operação
             AdicionarHistorico($"{numero1} * {numero2} = {resultado}");
+
+            // Limpa os campos apos o calculo
+            txtnumero1.Text = "";
+            txtnumero2.Text = "";
+
+            // Coloca o cursor no primeiro campo novamente
+            txtnumero1.Focus();
         }
 
         // Botão de Dividir
@@ -80,8 +101,14 @@ namespace CalculadoraForms
                 MessageBox.Show("Não é possível dividir por zero", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            // Limpa os campos apos o calculo
+            txtnumero1.Text = "";
+            txtnumero2.Text = "";
+
+            // Coloca o cursor no primeiro campo novamente
+            txtnumero1.Focus();
         }
-         //  se o usuário preenchou os campos
+         // Se o usuário preenchou os campos
         private bool ValidarEntradas()
         {
             if (string.IsNullOrWhiteSpace(txtnumero1.Text) || string.IsNullOrWhiteSpace(txtnumero2.Text))
