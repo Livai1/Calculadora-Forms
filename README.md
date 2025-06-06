@@ -43,7 +43,7 @@ A interface é composta por:
 
 1. Clone o repositório:
    ```
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/Livai1/Calculadora-Forms.git
    ```
 
 2. Abra o projeto no **Visual Studio**.
